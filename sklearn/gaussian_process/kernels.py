@@ -291,6 +291,7 @@ class Kernel(six.with_metaclass(ABCMeta)):
             if not hyperparameter.fixed:
                 bounds.append(hyperparameter.bounds)
         if len(bounds) > 0:
+            print("np.vstack(bounds): ", np.vstack(bounds))
             return np.log(np.vstack(bounds))
         else:
             return np.array([])
