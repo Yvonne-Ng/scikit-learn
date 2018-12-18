@@ -268,6 +268,7 @@ class Kernel(six.with_metaclass(ABCMeta)):
                     theta[i:i + hyperparameter.n_elements])
                 i += hyperparameter.n_elements
             else:
+                theta=np.nan_to_num(theta)
                 params[hyperparameter.name] = np.exp(theta[i])
                 i += 1
 
